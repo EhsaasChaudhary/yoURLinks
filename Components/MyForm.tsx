@@ -19,10 +19,11 @@ const MyForm: React.FC = () => {
   
         console.log('Form submitted with input value: ' + response);
   
+        //need to open a model component not push to history
         router.push('/History');
       } catch (error) {
         
-        throw error;
+        throw new Error("The Error page");
       }
   };
 
