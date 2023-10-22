@@ -1,4 +1,3 @@
-import React from "react";
 import Swirl  from "@/Components/Swirl"
 import './globals.css'
 

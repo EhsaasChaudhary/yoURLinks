@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Post } from '@/lib/Postlinks';
 import GenerateUuid from '@/lib/getUuid';
