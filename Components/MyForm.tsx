@@ -1,13 +1,11 @@
 'use client'
 
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { Post } from '@/lib/Postlinks';
 import GenerateUuid from '@/lib/GetUuid';
 
 const MyForm: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
-  const router = useRouter();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -21,7 +19,7 @@ try {
 
       console.log('Form submitted with input value: ' + response);
       //open a model instead of navigating to the history
-      router.push('/History');
+      
     } catch (error) {
 
       throw error;
