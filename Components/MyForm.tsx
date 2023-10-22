@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { Post } from '@/lib/Postlinks';
+import { postData } from '@/lib/Postlinks';
 import GenerateUuid from '@/lib/GetUuid';
 
 const MyForm: React.FC = () => {
@@ -15,15 +15,16 @@ const MyForm: React.FC = () => {
     e.preventDefault();
 
 try {
-      const response = await Post(GenerateUuid(), inputValue);
+      const response = await postData(GenerateUuid(), inputValue);
 
       console.log('Form submitted with input value: ' + response);
-      //open a model instead of navigating to the history
+      //open a model component here instead of navigating to the history
+
       
     } catch (error) {
-
-      throw error;
-    }
+        console.error("An error occurred:", error);
+        throw error; 
+      }
   };
 
   return (
