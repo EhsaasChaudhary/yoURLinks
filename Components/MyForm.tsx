@@ -14,17 +14,16 @@ const MyForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    try {
-        const response = await Post(GenerateUuid(), inputValue);
-  
-        console.log('Form submitted with input value: ' + response);
-  
-        //need to open a model component not push to history
-        router.push('/History');
-      } catch (error) {
-        
-        throw new Error("The Error page");
-      }
+try {
+      const response = await Post(GenerateUuid(), inputValue);
+
+      console.log('Form submitted with input value: ' + response);
+      //open a model instead of navigating to the history
+      router.push('/History');
+    } catch (error) {
+
+      throw error;
+    }
   };
 
   return (
