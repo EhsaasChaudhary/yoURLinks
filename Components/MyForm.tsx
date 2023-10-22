@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { Post } from '@/lib/Postlinks';
-import GenerateUuid from '@/lib/getUuid';
+import GenerateUuid from '@/lib/GetUuid';
 
 const MyForm: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
