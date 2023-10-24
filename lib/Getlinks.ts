@@ -10,19 +10,16 @@
 //         // return Response.json({ data })
 //     }
 
-export async function getData() {
-  const res = await fetch("https://data.mongodb-api.com/...", {
+export async function getData():Promise<any[]> {
+  const res = await fetch('https://ap-south-1.aws.data.mongodb-api.com/app/data-walof/endpoint/geturl', {
     headers: {
       "Content-Type": "application/json",
     },
   });
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
+  
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error("Failed to fetch data");
   }
-
-  return res.json();
+  // console.log(res.json());
+  return await res.json();
 }

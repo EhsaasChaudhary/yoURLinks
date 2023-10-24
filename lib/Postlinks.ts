@@ -18,9 +18,9 @@
   export async function postData(ShortPath: string, OrgLink: string) {
   
     try {
-      const res = await fetch('https://data.mongodb-api.com/...', {
+      const res = await fetch('https://ap-south-1.aws.data.mongodb-api.com/app/data-walof/endpoint/posturl', {
         method: 'POST',
-        body: JSON.stringify({ shortpath: ShortPath, orgLink: OrgLink }),
+        body: JSON.stringify({ shortpath: ShortPath, orglink: OrgLink }),
         headers: {
           'Content-Type': 'application/json', // Specify the content type
         },
