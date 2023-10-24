@@ -8,7 +8,7 @@ export default async function URLpage() {
 
   console.log(data);
 
-  
+
   return (
     <>
       <MyForm />
