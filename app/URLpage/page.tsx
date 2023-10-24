@@ -4,7 +4,11 @@ import { Key } from "react";
 
 export default async function URLpage() {
   const data = await getData();
+
+
   console.log(data);
+
+  
   return (
     <>
       <MyForm />
