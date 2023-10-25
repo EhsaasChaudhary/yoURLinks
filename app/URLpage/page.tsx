@@ -5,6 +5,8 @@ import { getData } from "@/lib/Getlinks";
 import { Key } from "react";
 import Link from "next/link";
 
+// Opt out of caching for all data requests in the route segment
+export const dynamic = 'force-dynamic'
 export default async function URLpage() {
   const data = await getData();
 
