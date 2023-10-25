@@ -12,31 +12,31 @@ export default async function URLpage() {
       <MyForm />
       <br />
       <br />
-      {/* <table>
+      <table>
         <thead>
           <tr>
             <th>Original URL</th>
             <th>Short URL</th>
           </tr>
         </thead>
-        <tbody> */}
+        <tbody>
           {data.map(
             (
               url: { shortpath: string; orglink: string },
               index: Key | null | undefined
             ) => (
-              <ul key={index}>
-                <li>
-                  <a href="www.google.com" className="font-black"></a>
-                </li>
-                <li>
+              <tr key={index}>
+                <td>
+                  <a href={`${url.orglink}`}></a>
+                </td>
+                <td>
                 <a href="https://yourlinks.vercel.app/{url.orglink}" target="_blank"></a>
-                </li>
-              </ul>
+                </td>
+              </tr>
             )
           )}
-        {/* </tbody>
-      </table> */}
+        </tbody>
+      </table>
     </>
   );
 }
