@@ -30,7 +30,7 @@ export default async function URLpage() {
                   <a href={url.orglink}></a>
                 </td>
                 <td>
-                <a href="https://yourlinks.vercel.app/${url.orglink}" target="_blank"></a>
+                <a href="https://yourlinks.vercel.app/{url.orglink}" target="_blank"></a>
                 </td>
               </tr>
             )
