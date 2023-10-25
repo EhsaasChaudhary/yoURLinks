@@ -4,12 +4,9 @@ import MyForm from "@/Components/MyForm";
 import { getData } from "@/lib/Getlinks";
 import { Key } from "react";
 import Link from "next/link";
-import { RedirectLink } from "@/lib/RedirectLink";
-import { NextRequest } from 'next/server';
 
 export default async function URLpage() {
   const data = await getData();
-
 
   return (
     <>
