@@ -1,6 +1,10 @@
+'use client'
+
 import MyForm from "@/Components/MyForm";
 import { getData } from "@/lib/Getlinks";
 import { Key } from "react";
+import { RedirectLink } from "@/lib/RedirectLink";
+import { NextRequest } from 'next/server';
 
 export default async function URLpage() {
   const data = await getData();
@@ -35,6 +39,13 @@ export default async function URLpage() {
                   <a
                     href={`https://yourlinks.vercel.app/${url.shortpath}`}
                     target="_blank"
+                    onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
+                      event.preventDefault();
+                      RedirectLink(
+                        url.shortpath,
+                        url.orglink
+                      )(event as any as NextRequest);
+                    }}
                   >
                     yourlinks.vercel.app/{url.shortpath}
                   </a>
