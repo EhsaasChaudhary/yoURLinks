@@ -16,8 +16,10 @@ export default async function handler(
     const response = getData();
 
     response.then((data: Link[]) => {
+       
 
       data.map((url: { shortpath: string; orglink: string }) =>
+    //   console.log(url)
         res.redirect(url.orglink)
       );
     });
