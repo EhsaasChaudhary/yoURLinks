@@ -27,7 +27,7 @@ export default async function URLpage() {
             ) => (
               <ul key={index}>
                 <li>
-                  <a href="www.google.com"></a>
+                  <a href="www.google.com" className="text-black"></a>
                 </li>
                 <li>
                 <a href="https://yourlinks.vercel.app/{url.orglink}" target="_blank"></a>
