@@ -36,7 +36,7 @@ export default async function URLpage() {
                 </td>
                 <td>
                   <a
-                    href={`https://localhost:3000/${url.shortpath}`}
+                    href={`https://yourlinks.vercel.app/${url.shortpath}`}
                     target="_blank"
                     onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
                       event.preventDefault();
