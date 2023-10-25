@@ -36,7 +36,7 @@ export default async function URLpage() {
                   </a>
                 </td>
                 <td>
-                  <Link href={url.shortpath}></Link>
+                  <Link href={url.shortpath}>a</Link>
                   {/* <a
                     href={`http://yourlinks.vercel.app/${url.shortpath}`}
                     target="_blank"
