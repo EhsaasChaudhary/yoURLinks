@@ -3,6 +3,7 @@
 import MyForm from "@/Components/MyForm";
 import { getData } from "@/lib/Getlinks";
 import { Key } from "react";
+import Link from "next/link";
 import { RedirectLink } from "@/lib/RedirectLink";
 import { NextRequest } from 'next/server';
 
@@ -35,7 +36,8 @@ export default async function URLpage() {
                   </a>
                 </td>
                 <td>
-                  <a
+                  <Link href={url.shortpath}></Link>
+                  {/* <a
                     href={`http://yourlinks.vercel.app/${url.shortpath}`}
                     target="_blank"
                     onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -47,7 +49,7 @@ export default async function URLpage() {
                     }}
                   >
                     yourlinks.vercel.app/{url.shortpath}
-                  </a>
+                  </a> */}
                 </td>
               </tr>
             )
