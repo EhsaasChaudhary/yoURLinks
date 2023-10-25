@@ -5,9 +5,7 @@ import { Key } from "react";
 export default async function URLpage() {
   const data = await getData();
 
-
   console.log(data);
-
 
   return (
     <>
@@ -24,15 +22,15 @@ export default async function URLpage() {
         <tbody>
           {data.map(
             (
-              data: { shortpath: string; orglink: string },
+              url: { shortpath: string; orglink: string },
               index: Key | null | undefined
             ) => (
               <tr key={index}>
                 <td>
-                    {data.orglink}
+                  <a href={url.orglink}></a>
                 </td>
                 <td>
-                  {data.shortpath}
+                <a href={`https://yourlinks.vercel.app/${url.orglink}`} target="_blank"></a>
                 </td>
               </tr>
             )
