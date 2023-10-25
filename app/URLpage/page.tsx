@@ -9,7 +9,6 @@ import { NextRequest } from 'next/server';
 export default async function URLpage() {
   const data = await getData();
 
-  console.log(data);
 
   return (
     <>
@@ -37,7 +36,7 @@ export default async function URLpage() {
                 </td>
                 <td>
                   <a
-                    href={`https://yourlinks.vercel.app/${url.shortpath}`}
+                    href={`https://localhost:3000/${url.shortpath}`}
                     target="_blank"
                     onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
                       event.preventDefault();
