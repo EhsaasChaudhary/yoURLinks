@@ -1,5 +1,3 @@
-'use client'
-
 import MyForm from "@/Components/MyForm";
 import { getData } from "@/lib/Getlinks";
 import { Key } from "react";
@@ -23,39 +21,26 @@ export default async function URLpage() {
           </tr>
         </thead>
         <tbody>
-          {data.map(
+          {data?.map(
             (
-              url: { shortpath: string; orglink: string },
+              item: {
+                shortpath: string | undefined;
+                orglink: string | undefined;
+              },
               index: Key | null | undefined
             ) => (
               <tr key={index}>
                 <td>
-                  <a href={`${url.orglink}`} target="_blank">
-                    {url.orglink}
-                  </a>
+                  <a href={item.orglink}>{item.orglink}</a>
                 </td>
                 <td>
-                  <Link href="">a</Link>
-                  {/* <a
-                    href={`http://yourlinks.vercel.app/${url.shortpath}`}
-                    target="_blank"
-                    onClick={(event: React.MouseEvent<HTMLAnchorElement>) => {
-                      event.preventDefault();
-                      RedirectLink(
-                        url.shortpath,
-                        url.orglink
-                      )(event as any as NextRequest);
-                    }}
-                  >
-                    yourlinks.vercel.app/{url.shortpath}
-                  </a> */}
+                  <Link href={`${item.shortpath}`}>{item.shortpath}</Link>
                 </td>
               </tr>
             )
           )}
         </tbody>
       </table>
-
     </>
   );
 }
