@@ -31,7 +31,7 @@ export default async function URLpage() {
             ) => (
               <tr key={index}>
                 <td>
-                  <a href={item.orglink}>{item.orglink}</a>
+                  <a href={item.orglink}>{`https://yourlinks.vercel.app/${item.orglink}`}</a>
                 </td>
                 <td>
                   <Link href={`${item.shortpath}`}>{item.shortpath}</Link>
