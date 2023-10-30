@@ -22,7 +22,7 @@ export async function generateStaticParams() {
   // using the `params` returned by `generateStaticParams`
   export default function Page({ params }: { params: { slug: string } }) {
     const datas= getorg(params)
-    console.log(datas);
+    console.log(datas)
     console.log(params)
     const { slug } = params
     // ...
