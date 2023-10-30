@@ -1,27 +1,29 @@
-// import type { NextApiRequest, NextApiResponse } from "next";
-// import { getData } from "@/lib/Getlinks";
+import { getData } from "@/lib/Getlinks"
 
-// interface Link {
-//   shortpath: string;
-//   orglink: string;
-// }
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+    const url = await getData()
+   
+    return url.map((url: { slug: any }) => ({
+      slug: url.slug,
+    }))
+  }
 
-// export default async function handler(
-//   req: NextApiRequest,
-//   res: NextApiResponse
-// ) {
-//   const { code } = req.query;
+  export async function getorg(targetValue: any) {
+    const url = await getData()
+    return url
+      .filter((item: { secondString: any; }) => item.secondString === targetValue)
+      .map((item: { slug: any; }) => item.slug);
+  }
+   
 
-//   if (typeof code == "string") {
-//     const response = getData();
 
-//     response.then((data: Link[]) => {
-       
-
-//       data.map((url: { shortpath: string; orglink: string }) =>
-//     //   console.log(url)
-//         res.redirect(url.orglink)
-//       );
-//     });
-//   }
-// }
+  // Multiple versions of this page will be statically generated
+  // using the `params` returned by `generateStaticParams`
+  export default function Page({ params }: { params: { slug: string } }) {
+    const datas= getorg(params)
+    console.log(datas);
+    console.log(params)
+    const { slug } = params
+    // ...
+  }
